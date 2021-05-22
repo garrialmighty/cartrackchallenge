@@ -14,6 +14,7 @@ struct LoginViewModel {
     var password = ""
     var willRemember = false
     var selectedCountry = ""
+    weak var delegate: LoginViewModelDelegate?
     
     // TODO: use a free API
     let countries = [
@@ -222,6 +223,11 @@ struct LoginViewModel {
     }
     
     func authenticate() {
-        print("\(username) \(password) \(selectedCountry)")
+        let isAuthenticated = Room.authenticate(username: username, password: password)
+        delegate?.viewModel(self, didLogin: isAuthenticated)
     }
+}
+
+protocol LoginViewModelDelegate: AnyObject {
+    func viewModel(_ viewModel: LoginViewModel, didLogin isAuthenticated: Bool)
 }

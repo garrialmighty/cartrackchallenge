@@ -16,6 +16,11 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var countryPickerView: UIPickerView!
     private var viewModel = LoginViewModel()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.delegate = self
+    }
+    
     @IBAction private func login() {
         viewModel.authenticate()
     }
@@ -29,6 +34,18 @@ final class LoginViewController: UIViewController {
         } else {
         let icon = viewModel.willRemember ? "☑️" : "⬜️"
             rememberButton.setTitle(icon, for: .normal)
+        }
+    }
+}
+
+// MARK: - LoginViewModelDelegate
+extension LoginViewController: LoginViewModelDelegate {
+    func viewModel(_ viewModel: LoginViewModel, didLogin isAuthenticated: Bool) {
+        print("is authed \(isAuthenticated)")
+        if isAuthenticated {
+            // TODO: navigate to user list screen
+        } else {
+            // TODO: show error
         }
     }
 }
