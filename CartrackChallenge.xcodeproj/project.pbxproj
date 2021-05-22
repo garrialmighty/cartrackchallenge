@@ -17,6 +17,10 @@
 		6F98033D26569FEF0028BD5C /* CartrackChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F98033C26569FEF0028BD5C /* CartrackChallengeUITests.swift */; };
 		6F98034E2656A1380028BD5C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F98034D2656A1380028BD5C /* LoginViewController.swift */; };
 		6F9803522656A14F0028BD5C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9803512656A14F0028BD5C /* LoginViewModel.swift */; };
+		6FD7A6472658FFE4003499D1 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7A6462658FFE4003499D1 /* Room.swift */; };
+		6FD7A64E265914CF003499D1 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7A64D265914CF003499D1 /* Database.swift */; };
+		6FD7A650265916D9003499D1 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7A64F265916D9003499D1 /* Credential.swift */; };
+		6FD7A6532659189C003499D1 /* users.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6FD7A6522659189C003499D1 /* users.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		6F98033E26569FEF0028BD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F98034D2656A1380028BD5C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6F9803512656A14F0028BD5C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6FD7A6462658FFE4003499D1 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		6FD7A64D265914CF003499D1 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		6FD7A64F265916D9003499D1 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		6FD7A6522659189C003499D1 /* users.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = users.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,9 @@
 		6F98031626569FDA0028BD5C /* CartrackChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				6FD7A6522659189C003499D1 /* users.csv */,
+				6FD7A64C265914C4003499D1 /* Utility */,
+				6FD7A6452658FFCE003499D1 /* Modules */,
 				6F98034A2656A1090028BD5C /* Models */,
 				6F98034B2656A1110028BD5C /* Screens */,
 				6F98031726569FDA0028BD5C /* AppDelegate.swift */,
@@ -137,6 +148,7 @@
 		6F98034A2656A1090028BD5C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6FD7A64F265916D9003499D1 /* Credential.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +168,22 @@
 				6F9803512656A14F0028BD5C /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		6FD7A6452658FFCE003499D1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6FD7A6462658FFE4003499D1 /* Room.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		6FD7A64C265914C4003499D1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				6FD7A64D265914CF003499D1 /* Database.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F98032726569FEF0028BD5C /* LaunchScreen.storyboard in Resources */,
+				6FD7A6532659189C003499D1 /* users.csv in Resources */,
 				6F98032426569FEF0028BD5C /* Assets.xcassets in Resources */,
 				6F98031F26569FDA0028BD5C /* Main.storyboard in Resources */,
 			);
@@ -290,8 +319,11 @@
 			files = (
 				6F98032226569FDA0028BD5C /* CartrackChallenge.xcdatamodeld in Sources */,
 				6F9803522656A14F0028BD5C /* LoginViewModel.swift in Sources */,
+				6FD7A650265916D9003499D1 /* Credential.swift in Sources */,
+				6FD7A6472658FFE4003499D1 /* Room.swift in Sources */,
 				6F98031826569FDA0028BD5C /* AppDelegate.swift in Sources */,
 				6F98034E2656A1380028BD5C /* LoginViewController.swift in Sources */,
+				6FD7A64E265914CF003499D1 /* Database.swift in Sources */,
 				6F98031A26569FDA0028BD5C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
