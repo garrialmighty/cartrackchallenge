@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Cartrack uses your location to show how far you are to a car</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Cartrack uses your location to show how far you are to a car</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -13,6 +13,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var rememberButton: UIButton!
+    @IBOutlet private weak var countryLabel: UILabel!
     @IBOutlet private weak var countryPickerView: UIPickerView!
     private var viewModel = LoginViewModel()
     
@@ -40,11 +41,27 @@ final class LoginViewController: UIViewController {
 
 // MARK: - LoginViewModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
+    func viewModel(_ viewModel: LoginViewModel, didEncounterError error: Error) {
+        let alert = UIAlertController(title: "Unknown Error",
+                                      message: "Unexpected error occurred. Please try again or contact support",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        present(alert, animated: true)
+    }
+    
     func viewModel(_ viewModel: LoginViewModel, didLogin isAuthenticated: Bool) {
         if isAuthenticated {
             NotificationCenter.default.post(name: .loggedIn, object: nil)
         } else {
-            // TODO: show error
+            let redColor = UIColor.red.cgColor
+            usernameTextField.layer.borderColor = redColor
+            passwordTextField.layer.borderColor = redColor
+            
+            let alert = UIAlertController(title: "Invalid Credentials",
+                                          message: "Kindly double-check your username and password and try again",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alert, animated: true)
         }
     }
 }
@@ -54,6 +71,12 @@ extension LoginViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
+        
+        // reset borders
+        let blackColor = UIColor.black.cgColor
+        usernameTextField.layer.borderColor = blackColor
+        passwordTextField.layer.borderColor = blackColor
+        
         if let text = textField.text, let textRange = Range(range, in: text) {
             let updatedString = text.replacingCharacters(in: textRange, with: string)
             
@@ -64,10 +87,15 @@ extension LoginViewController: UITextFieldDelegate {
                 viewModel.password = updatedString
             }
             
-            // update login button state depending if the user had valid inputs
-            loginButton.isEnabled = viewModel.hasValidFields
+            let hasValidFields = viewModel.hasValidFields
             
-            // TODO: animate country picker
+            // update login button state depending if the user had valid inputs
+            loginButton.isEnabled = hasValidFields
+            
+            UIView.animate(withDuration: 0.4) { [unowned self] in
+                self.countryLabel.alpha = hasValidFields ? 1.0 : 0.0
+                self.countryPickerView.alpha = hasValidFields ? 1.0 : 0.0
+            }
         }
         
         return true
