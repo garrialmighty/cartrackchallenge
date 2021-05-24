@@ -9,6 +9,7 @@ import UIKit
 
 protocol CarListTableViewControllerDelegate: AnyObject {
     func carListView(_ view: CarListTableViewController, didSelect car: Car)
+    func carListViewDidLogout()
 }
 
 final class CarListTableViewController: UITableViewController {
@@ -19,6 +20,10 @@ final class CarListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchCars()
+    }
+    
+    @IBAction private func logout(_ sender: UIBarButtonItem) {
+        delegate?.carListViewDidLogout()
     }
 }
 

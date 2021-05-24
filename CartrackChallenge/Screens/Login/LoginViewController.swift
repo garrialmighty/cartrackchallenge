@@ -41,9 +41,8 @@ final class LoginViewController: UIViewController {
 // MARK: - LoginViewModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
     func viewModel(_ viewModel: LoginViewModel, didLogin isAuthenticated: Bool) {
-        print("is authed \(isAuthenticated)")
         if isAuthenticated {
-            // TODO: navigate to user list screen
+            NotificationCenter.default.post(name: .loggedIn, object: nil)
         } else {
             // TODO: show error
         }
