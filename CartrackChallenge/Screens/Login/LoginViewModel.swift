@@ -10,6 +10,7 @@ import Foundation
 
 protocol LoginViewModelDelegate: AnyObject {
     func viewModel(_ viewModel: LoginViewModel, didLogin isAuthenticated: Bool)
+    func viewModel(_ viewModel: LoginViewModel, didEncounterError error: Error)
 }
 
 struct LoginViewModel {
@@ -227,14 +228,20 @@ struct LoginViewModel {
     }
     
     func authenticate() {
-        let isAuthenticated = Room.authenticate(username: username, password: password)
-        
-        if isAuthenticated && willRemember {
-            // use keychain once auth API is available
-            // we use UserDefaults for now
-            UserDefaults.standard.setValue(true, forKeyPath: hasLoggedInKey)
+        do {
+            let isAuthenticated = try Room.authenticate(username: username, password: password)
+            
+            if isAuthenticated && willRemember {
+                // use keychain once auth API is available
+                // we use UserDefaults for now
+                UserDefaults.standard.setValue(true, forKeyPath: hasLoggedInKey)
+            }
+            
+            delegate?.viewModel(self, didLogin: isAuthenticated)
+        } catch AuthenticationError.invalidCredentials {
+            delegate?.viewModel(self, didLogin: false)
+        } catch {
+            delegate?.viewModel(self, didEncounterError: error)
         }
-        
-        delegate?.viewModel(self, didLogin: isAuthenticated)
     }
 }

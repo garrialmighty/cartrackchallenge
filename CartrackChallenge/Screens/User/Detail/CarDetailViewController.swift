@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 final class CarDetailViewController: UIViewController {
     
@@ -14,6 +15,7 @@ final class CarDetailViewController: UIViewController {
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     @IBOutlet private weak var mapView: MKMapView!
+    private let locationManager = CLLocationManager()
     
     var viewModel = CarDetailViewModel() {
         didSet {
@@ -28,11 +30,9 @@ final class CarDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        locationManager.requestWhenInUseAuthorization()
     }
-}
-
-// MARK: - Private
-extension CarDetailViewController {
+    
     private func updateUI() {
         nameLabel.text = viewModel.car.name
         usernameLabel.text = viewModel.car.username
@@ -46,9 +46,11 @@ extension CarDetailViewController {
         let pin = MKPlacemark(coordinate: viewModel.car.locationCoordinate)
         mapView.addAnnotation(pin)
         
-        // TODO: update as user moves
         let userPin = MKPlacemark(coordinate: mapView.userLocation.coordinate)
-        mapView.addAnnotation(userPin)
         mapView.showAnnotations([pin, userPin], animated: false)
+        
+        // remove user pin since we only use it to zoom out the map
+        // so that both car pin and user location are visible
+        mapView.removeAnnotation(userPin)
     }
 }
