@@ -8,6 +8,10 @@
 import UIKit
 import Foundation
 
+protocol LoginViewModelDelegate: AnyObject {
+    func viewModel(_ viewModel: LoginViewModel, didLogin isAuthenticated: Bool)
+}
+
 struct LoginViewModel {
     
     var username = ""
@@ -224,10 +228,13 @@ struct LoginViewModel {
     
     func authenticate() {
         let isAuthenticated = Room.authenticate(username: username, password: password)
+        
+        if isAuthenticated && willRemember {
+            // use keychain once auth API is available
+            // we use UserDefaults for now
+            UserDefaults.standard.setValue(true, forKeyPath: hasLoggedInKey)
+        }
+        
         delegate?.viewModel(self, didLogin: isAuthenticated)
     }
-}
-
-protocol LoginViewModelDelegate: AnyObject {
-    func viewModel(_ viewModel: LoginViewModel, didLogin isAuthenticated: Bool)
 }

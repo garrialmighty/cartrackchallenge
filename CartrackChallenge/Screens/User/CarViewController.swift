@@ -11,6 +11,7 @@ final class CarViewController: UISplitViewController {
     
     private var listVC: CarListTableViewController!
     private var detailsVC: CarDetailViewController!
+    let viewModel = CarViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,5 +44,9 @@ extension CarViewController: CarListTableViewControllerDelegate {
         } else {
             showDetailViewController(detailsVC, sender: nil)
         }
+    }
+    
+    func carListViewDidLogout() {
+        viewModel.logout()
     }
 }

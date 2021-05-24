@@ -151,7 +151,13 @@
                             <outlet property="delegate" destination="bYq-ji-tOm" id="psA-hZ-490"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Car List" id="Yet-Ve-XLB"/>
+                    <navigationItem key="navigationItem" title="Car List" id="Yet-Ve-XLB">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" style="done" id="eOy-Ul-Ocz">
+                            <connections>
+                                <action selector="logout:" destination="bYq-ji-tOm" id="saY-0c-Du2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MlR-iJ-pT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

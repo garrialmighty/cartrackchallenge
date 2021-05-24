@@ -18,12 +18,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
+        NotificationCenter.default.addObserver(self, selector: #selector(showList), name: .loggedIn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showLogin), name: .loggedOut, object: nil)
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
-        window?.makeKeyAndVisible()
+        
+        
+        if UserDefaults.standard.bool(forKey: hasLoggedInKey) {
+            showList()
+        } else {
+            showLogin()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,6 +61,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         Database.shared.saveContext()
+    }
+}
+
+@available(iOS 13.0, *)
+extension SceneDelegate {
+    @objc private func showLogin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        window?.rootViewController =  storyboard.instantiateInitialViewController()
+        window?.makeKeyAndVisible()
+    }
+    
+    @objc private func showList() {
+        let storyboard = UIStoryboard(name: "CarList", bundle: .main)
+        window?.rootViewController =  storyboard.instantiateInitialViewController()
+        window?.makeKeyAndVisible()
     }
 }
 
