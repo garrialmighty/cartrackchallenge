@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lg4-dX-9mz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Car Detail View Controller-->
+        <scene sceneID="fhk-u3-tWj">
+            <objects>
+                <viewController id="roa-1A-RXe" customClass="CarDetailViewController" customModule="CartrackChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C8Q-kE-sA9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVB-7U-AS0">
+                                <rect key="frame" x="0.0" y="238" width="414" height="624"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZ3-5J-INu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FV8-Qe-2Wb">
+                                        <rect key="frame" x="20" y="0.0" width="374" height="150"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rUU-0Z-XGJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f04-YN-G4y">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU7-DU-i7Z">
+                                                        <rect key="frame" x="187" y="0.0" width="187" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="v8y-uG-rmh">
+                                                <rect key="frame" x="0.0" y="50" width="374" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQU-Ts-Rnx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="johnDoe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3G-Yx-eTh">
+                                                        <rect key="frame" x="187" y="0.0" width="187" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="x0c-Mp-xsa">
+                                                <rect key="frame" x="0.0" y="100" width="374" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZ1-7u-bHt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="john.doe@email.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsE-dU-Emf">
+                                                        <rect key="frame" x="187" y="0.0" width="187" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="FV8-Qe-2Wb" firstAttribute="top" secondItem="kZ3-5J-INu" secondAttribute="top" id="MHg-BL-06l"/>
+                                    <constraint firstItem="FV8-Qe-2Wb" firstAttribute="leading" secondItem="kZ3-5J-INu" secondAttribute="leading" constant="20" id="Ve2-IH-Wou"/>
+                                    <constraint firstAttribute="trailing" secondItem="FV8-Qe-2Wb" secondAttribute="trailing" constant="20" id="VhP-x7-LGC"/>
+                                    <constraint firstAttribute="height" constant="150" id="WGu-jd-I1W"/>
+                                    <constraint firstAttribute="bottom" secondItem="FV8-Qe-2Wb" secondAttribute="bottom" id="czK-Ks-jh8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R0n-if-X6n"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kZ3-5J-INu" firstAttribute="top" secondItem="R0n-if-X6n" secondAttribute="top" id="2wK-dg-j7m"/>
+                            <constraint firstItem="jVB-7U-AS0" firstAttribute="leading" secondItem="R0n-if-X6n" secondAttribute="leading" id="6ky-tG-IkQ"/>
+                            <constraint firstItem="R0n-if-X6n" firstAttribute="trailing" secondItem="jVB-7U-AS0" secondAttribute="trailing" id="K8y-qp-8of"/>
+                            <constraint firstItem="kZ3-5J-INu" firstAttribute="trailing" secondItem="R0n-if-X6n" secondAttribute="trailing" id="SZq-IC-fTe"/>
+                            <constraint firstItem="R0n-if-X6n" firstAttribute="bottom" secondItem="jVB-7U-AS0" secondAttribute="bottom" id="WHK-re-YUG"/>
+                            <constraint firstItem="kZ3-5J-INu" firstAttribute="leading" secondItem="R0n-if-X6n" secondAttribute="leading" id="w7l-7o-2Su"/>
+                            <constraint firstItem="jVB-7U-AS0" firstAttribute="top" secondItem="kZ3-5J-INu" secondAttribute="bottom" id="yYC-0h-qzH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="VsE-dU-Emf" id="4zy-jH-4We"/>
+                        <outlet property="mapView" destination="jVB-7U-AS0" id="XZj-xy-AfY"/>
+                        <outlet property="nameLabel" destination="aU7-DU-i7Z" id="JN0-OS-54B"/>
+                        <outlet property="usernameLabel" destination="S3G-Yx-eTh" id="zXs-Nj-so7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W23-Fg-azd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-373.91304347826087" y="206.91964285714286"/>
+        </scene>
+        <!--Car List-->
+        <scene sceneID="5nr-Le-y9h">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="bYq-ji-tOm" customClass="CarListTableViewController" customModule="CartrackChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4gI-al-eB1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarCell" id="Gdf-Hg-GhH" customClass="CarTableViewCell" customModule="CartrackChallenge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gdf-Hg-GhH" id="ZOk-p5-Onv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="johnDoe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1k-hO-4x3">
+                                            <rect key="frame" x="20" y="14.5" width="63.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="n1k-hO-4x3" firstAttribute="leading" secondItem="ZOk-p5-Onv" secondAttribute="leadingMargin" id="LfW-iN-1LC"/>
+                                        <constraint firstItem="n1k-hO-4x3" firstAttribute="centerY" secondItem="ZOk-p5-Onv" secondAttribute="centerY" id="Os6-Lj-s0J"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="usernameLabel" destination="n1k-hO-4x3" id="Wfr-Wm-fag"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bYq-ji-tOm" id="Qug-Wb-DCj"/>
+                            <outlet property="delegate" destination="bYq-ji-tOm" id="psA-hZ-490"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Car List" id="Yet-Ve-XLB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MlR-iJ-pT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="-400"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dZ0-2i-KMW">
+            <objects>
+                <navigationController id="HbU-Ua-xIg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z6K-Qs-aQN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bYq-ji-tOm" kind="relationship" relationship="rootViewController" id="eah-0a-S1o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTk-kg-wXT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-374" y="-400"/>
+        </scene>
+        <!--Car View Controller-->
+        <scene sceneID="rYt-M1-nch">
+            <objects>
+                <splitViewController allowDoubleColumnStyle="YES" id="Lg4-dX-9mz" customClass="CarViewController" customModule="CartrackChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="HbU-Ua-xIg" kind="relationship" relationship="masterViewController" id="1pf-VA-Ibg"/>
+                        <segue destination="roa-1A-RXe" kind="relationship" relationship="detailViewController" id="KEN-w3-Uww"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wv-Pw-fcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1264" y="-97"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
