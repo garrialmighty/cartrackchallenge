@@ -12,16 +12,22 @@ enum NetworkError: Error {
     case badURL, requestFailed, unknown
 }
 
+protocol CarLoader {
+    func fetchCars(page: Int, completion: @escaping (Result<[Car], NetworkError>) -> Void)
+}
+
 final class ApiService {
     
     static let shared = ApiService()
-    typealias NetworkResult = (Result<[Car], NetworkError>) -> Void
     private let baseURL = URL(string: "https://jsonplaceholder.typicode.com")!
     
     private init() {
     }
-    
-    func fetchCars(page: Int = 0, completion: @escaping NetworkResult)  {
+}
+
+// MARK: - CarLoader
+extension ApiService: CarLoader {
+    func fetchCars(page: Int, completion: @escaping (Result<[Car], NetworkError>) -> Void)  {
         guard var component = URLComponents(url: baseURL, resolvingAgainstBaseURL: true) else {
             completion(.failure(.badURL))
             return

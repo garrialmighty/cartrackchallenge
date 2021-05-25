@@ -20,6 +20,7 @@ struct LoginViewModel {
     var willRemember = false
     var selectedCountry = ""
     weak var delegate: LoginViewModelDelegate?
+    private let authenticator: Authenticator
     
     // TODO: use a free API
     let countries = [
@@ -223,13 +224,14 @@ struct LoginViewModel {
         !username.isEmpty && !password.isEmpty
     }
     
-    init() {
+    init(authenticator: Authenticator) {
         selectedCountry = countries.first ?? ""
+        self.authenticator = authenticator
     }
     
     func authenticate() {
         do {
-            let isAuthenticated = try Room.authenticate(username: username, password: password)
+            let isAuthenticated = try authenticator.authenticate(username: username, password: password)
             
             if isAuthenticated && willRemember {
                 // use keychain once auth API is available
