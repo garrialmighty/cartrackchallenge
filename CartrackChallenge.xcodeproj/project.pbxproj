@@ -10,6 +10,7 @@
 		6F68BDFF265B9E2D00C1421B /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68BDFE265B9E2D00C1421B /* Keys.swift */; };
 		6F68BE03265BA75300C1421B /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68BE02265BA75300C1421B /* CarViewModel.swift */; };
 		6F68BE06265BA7CB00C1421B /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68BE05265BA7CB00C1421B /* Notification+Extensions.swift */; };
+		6F68BE09265BC30C00C1421B /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68BE08265BC30C00C1421B /* ApiService.swift */; };
 		6F737936265B76120091B451 /* CarList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F737935265B76120091B451 /* CarList.storyboard */; };
 		6F737938265B770F0091B451 /* CarListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F737937265B770F0091B451 /* CarListTableViewController.swift */; };
 		6F73793C265B7C340091B451 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F73793B265B7C340091B451 /* CarDetailViewController.swift */; };
@@ -55,6 +56,7 @@
 		6F68BDFE265B9E2D00C1421B /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		6F68BE02265BA75300C1421B /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
 		6F68BE05265BA7CB00C1421B /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
+		6F68BE08265BC30C00C1421B /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		6F737935265B76120091B451 /* CarList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CarList.storyboard; sourceTree = "<group>"; };
 		6F737937265B770F0091B451 /* CarListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListTableViewController.swift; sourceTree = "<group>"; };
 		6F73793B265B7C340091B451 /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		6F68BE07265BC2D000C1421B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6F68BE08265BC30C00C1421B /* ApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		6F737934265B76030091B451 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				6FD7A6522659189C003499D1 /* users.csv */,
+				6F68BE07265BC2D000C1421B /* Services */,
 				6F68BDFD265B9E1900C1421B /* Constants */,
 				6FD7A64C265914C4003499D1 /* Utility */,
 				6F68BE04265BA7BA00C1421B /* Extensions */,
@@ -283,6 +294,8 @@
 			dependencies = (
 			);
 			name = CartrackChallenge;
+			packageProductDependencies = (
+			);
 			productName = CartrackChallenge;
 			productReference = 6F98031426569FDA0028BD5C /* CartrackChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -354,6 +367,8 @@
 				Base,
 			);
 			mainGroup = 6F98030B26569FDA0028BD5C;
+			packageReferences = (
+			);
 			productRefGroup = 6F98031526569FDA0028BD5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,6 +428,7 @@
 				6F98034E2656A1380028BD5C /* LoginViewController.swift in Sources */,
 				6F737947265B8D6F0091B451 /* CarViewController.swift in Sources */,
 				6F73793C265B7C340091B451 /* CarDetailViewController.swift in Sources */,
+				6F68BE09265BC30C00C1421B /* ApiService.swift in Sources */,
 				6F737938265B770F0091B451 /* CarListTableViewController.swift in Sources */,
 				6FD7A64E265914CF003499D1 /* Database.swift in Sources */,
 				6F68BE06265BA7CB00C1421B /* Notification+Extensions.swift in Sources */,
