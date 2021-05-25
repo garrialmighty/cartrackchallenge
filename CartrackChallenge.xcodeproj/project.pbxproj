@@ -81,6 +81,7 @@
 		6F98033E26569FEF0028BD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F98034D2656A1380028BD5C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6F9803512656A14F0028BD5C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6FBEC542265D304300652D94 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6FD7A6462658FFE4003499D1 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		6FD7A64D265914CF003499D1 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		6FD7A64F265916D9003499D1 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		6F98030B26569FDA0028BD5C = {
 			isa = PBXGroup;
 			children = (
+				6FBEC542265D304300652D94 /* README.md */,
 				6F98031626569FDA0028BD5C /* CartrackChallenge */,
 				6F98033026569FEF0028BD5C /* CartrackChallengeTests */,
 				6F98033B26569FEF0028BD5C /* CartrackChallengeUITests */,
