@@ -149,6 +149,7 @@
                         <connections>
                             <outlet property="dataSource" destination="bYq-ji-tOm" id="Qug-Wb-DCj"/>
                             <outlet property="delegate" destination="bYq-ji-tOm" id="psA-hZ-490"/>
+                            <outlet property="prefetchDataSource" destination="bYq-ji-tOm" id="Kgb-6h-x8h"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Car List" id="Yet-Ve-XLB">

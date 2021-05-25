@@ -19,6 +19,7 @@ final class CarListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         viewModel.fetchCars()
     }
     
@@ -51,5 +52,24 @@ extension CarListTableViewController {
         
         carCell.configure(for: viewModel.cars[indexPath.item])
         return carCell
+    }
+}
+
+// MARK: - UITableViewDataSourcePrefetching
+extension CarListTableViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        guard let indexToShow = indexPaths.first?.item else { return }
+        
+        // fetch the next page if the user has scrolled past half the list of available cars
+        if indexToShow > (viewModel.cars.count / 2) {
+            viewModel.fetchMoreCars()
+        }
+    }
+}
+
+// MARK: - CarListViewModelDelegate
+extension CarListTableViewController: CarListViewModelDelegate {
+    func carListViewModel(_ viewModel: CarListViewModel, didFetchCars cars: [Car]) {
+        tableView.reloadData()
     }
 }
