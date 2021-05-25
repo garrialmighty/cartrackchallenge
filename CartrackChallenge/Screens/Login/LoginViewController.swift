@@ -15,7 +15,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var rememberButton: UIButton!
     @IBOutlet private weak var countryLabel: UILabel!
     @IBOutlet private weak var countryPickerView: UIPickerView!
-    private var viewModel = LoginViewModel()
+    private var viewModel = LoginViewModel(authenticator: Room.shared)
     
     override func viewDidLoad() {
         super.viewDidLoad()

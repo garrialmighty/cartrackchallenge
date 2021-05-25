@@ -14,7 +14,7 @@ protocol CarListTableViewControllerDelegate: AnyObject {
 
 final class CarListTableViewController: UITableViewController {
     
-    var viewModel = CarListViewModel()
+    var viewModel = CarListViewModel(loader: ApiService.shared)
     weak var delegate: CarListTableViewControllerDelegate?
 
     override func viewDidLoad() {

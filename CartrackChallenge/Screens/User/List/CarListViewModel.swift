@@ -14,11 +14,17 @@ protocol CarListViewModelDelegate: AnyObject {
 final class CarListViewModel {
     
     var cars: [Car] = []
-    private var page = 0
     weak var delegate: CarListViewModelDelegate?
     
+    private var page = 1
+    private let loader: CarLoader
+    
+    init(loader: CarLoader) {
+        self.loader = loader
+    }
+    
     func fetchCars() {
-        ApiService.shared.fetchCars { [unowned self] result in
+        loader.fetchCars(page: 0) { [unowned self] result in
             switch result {
             case .success(let carsResult):
                 cars = carsResult
@@ -32,7 +38,7 @@ final class CarListViewModel {
     }
     
     func fetchMoreCars() {
-        ApiService.shared.fetchCars(page: page) { [unowned self] result in
+        loader.fetchCars(page: page) { [unowned self] result in
             switch result {
             case .success(let carsResult):
                 page += 1
