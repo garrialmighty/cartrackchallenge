@@ -20,10 +20,17 @@ final class CarViewController: UISplitViewController {
         var secondaryVC: UIViewController?
 
         let masterNavController = viewControllers.first as? UINavigationController
-        let detailNavController = viewControllers.last as? UINavigationController
-        
         primaryVC = masterNavController?.viewControllers.first
-        secondaryVC = detailNavController?.topViewController
+        
+        // in iOS 13 UISplitViewController returns a UINavigationController container for both master and detail
+        // in iOS 12 only master is contained in a UINavigationController
+        // TODO: use viewController(for:) introduced in iOS 14 
+        if #available(iOS 13, *) {
+            let detailNavController = viewControllers.last as? UINavigationController
+            secondaryVC = detailNavController?.topViewController
+        } else {
+            secondaryVC = viewControllers.last
+        }
         
         guard let listVC = primaryVC as? CarListTableViewController,
               let detailsVC = secondaryVC as? CarDetailViewController else { return }
